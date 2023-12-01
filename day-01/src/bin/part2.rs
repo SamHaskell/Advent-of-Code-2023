@@ -1,6 +1,11 @@
 fn main() {
+
     let input = include_str!("../../input/input1.txt");
+    
+    let tick = std::time::Instant::now();
     let output = part2(input);
+    println!("Done in {:?}", tick.elapsed());
+    
     dbg!(output);
 }
 
