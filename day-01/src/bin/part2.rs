@@ -1,5 +1,4 @@
 fn main() {
-
     let input = include_str!("../../input/input1.txt");
     
     let tick = std::time::Instant::now();
@@ -28,8 +27,9 @@ fn part2(input: &str) -> String {
         let mut first: u32 = 0;
         let mut last: u32 = 0;
         let length = line.len();
+
         for (i, char) in line.chars().enumerate() {
-            if char.is_ascii_digit() {
+            if char.is_digit(10) {
                 first = char.to_digit(10).unwrap();
                 break;
             }
@@ -47,7 +47,7 @@ fn part2(input: &str) -> String {
             }
         }
         for (i, char) in line.chars().rev().enumerate() {
-            if char.is_ascii_digit() {
+            if char.is_digit(10) {
                 last = char.to_digit(10).unwrap();
                 break;
             }
